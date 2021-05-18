@@ -9,6 +9,7 @@ const pokeReducer = (state = initialState, action) => {
     case actionTypes.ADD_POKEMONS:
       return {
         ...state.listOfPokemon,
+        listOfPokemon: action.data,
       };
 
     default:

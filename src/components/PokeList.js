@@ -6,8 +6,8 @@ import {
   View,
   TouchableWithoutFeedback,
 } from 'react-native';
-import React, {useState} from 'react';
-import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import React from 'react';
+import styles from './styles';
 import type {POKE_TYPE} from '../models/PokeModel';
 
 type AssetListProps = {
@@ -45,8 +45,8 @@ export const PokeList = (props: AssetListProps) => {
           pokemon: pokemon,
         });
       }}>
-      <View style={styles.itemPositive}>
-        <Text style={styles.titleText}>{pokemon.name}</Text>
+      <View style={styles.itemText}>
+        <Text style={styles.titleText}>{pokemon.name.toUpperCase()}</Text>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -66,63 +66,3 @@ export const PokeList = (props: AssetListProps) => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 30,
-    backgroundColor: '#EDEEFF',
-  },
-  input: {
-    width: '50%',
-    borderColor: 'black',
-    borderWidth: 1,
-    padding: 10,
-    marginBottom: 0,
-  },
-  itemPositive: {
-    backgroundColor: 'yellow',
-    padding: 10,
-    marginVertical: 2,
-    marginHorizontal: 16,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  itemNegative: {
-    backgroundColor: 'red',
-    padding: 10,
-    marginVertical: 2,
-    marginHorizontal: 16,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  headerItem: {
-    padding: 10,
-    backgroundColor: 'black',
-    marginVertical: 10,
-    marginHorizontal: 16,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  titleText: {
-    fontSize: hp('2.5%'),
-    fontFamily: 'AvenirNext-Bold',
-    color: '#192965',
-  },
-  titleTextHeader: {
-    fontSize: hp('2.5%'),
-    fontFamily: 'AvenirNext-Bold',
-    color: 'white',
-  },
-  itemText: {
-    fontSize: hp('2.2%'),
-    fontFamily: 'AvenirNext-Bold',
-    color: '#192965',
-  },
-  itemValue: {
-    fontSize: hp('2%'),
-    color: 'black',
-  },
-});
