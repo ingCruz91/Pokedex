@@ -36,7 +36,6 @@ const PokeDetail = props => {
         ),
       );
       setPokeId(data.id);
-      console.log(data);
     }
   };
 
